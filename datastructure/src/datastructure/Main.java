@@ -16,13 +16,15 @@ public class Main
 		
 		//Ask user to enter number of runs 
 		int numberOfTrials = scnr.nextInt();
+		int minTrialRun = 1;
+		int maxTrialRun = 100;
 		
 		//scanner to reset due to previous use of scanner object.
 		scnr.nextLine();
 		
 		
 		//if statement to meet correct range for number of trial.
-		if(numberOfTrials >= 1 && numberOfTrials <= 100)
+		if(numberOfTrials >= minTrialRun && numberOfTrials <= maxTrialRun)
 		{
 			for(int d = 0; d < numberOfTrials; d++)
 			{
@@ -46,12 +48,14 @@ public class Main
 		
 				for(int j = numArray.length - 1; j >= 0 ; j--)//algorithm to start at the end and go left and collect 2nd digit and transform it met condition.
 				{
+					int divisiblity = 2;
+					int maxReach = 9;
 					//if block to check conditions of the counter if need to make a transformation
 					int checking = numArray[j] * 2;
-					if(!(counter % 2 == 0)) 
+					if(!(counter % divisiblity == 0)) 
 					{
 						//further condition block if the product of an array times two is greater than 9
-						if(checking > 9) 
+						if(checking > maxReach) 
 						{
 							int newNumber = 0;
 							String str = Integer.toString(checking);
